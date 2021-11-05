@@ -37,7 +37,7 @@ import firebase from "firebase";
 export default {
   mounted() {
     this.db
-      .collection("messages")
+      .collection("salaTwo")
       .orderBy("createdAt")
       .onSnapshot((querySnap) => {
         this.messages = querySnap.docs.map((doc) => doc.data());
@@ -67,7 +67,7 @@ export default {
         createdAt: Date.now(),
       };
 
-      await this.db.collection("messages").add(messageInfo);
+      await this.db.collection("salaTwo").add(messageInfo);
 
       this.message = "";
       this.$refs["scrollable"].scrollIntoView({ behavior: "smooth" });

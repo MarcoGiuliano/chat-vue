@@ -1,30 +1,31 @@
 <template>
   <div id="app">
-    <Chat v-if="user"></Chat>
+    <Salas v-if="user"></Salas>
     <Login v-else></Login>
   </div>
 </template>
 
 <script>
-import Chat from './components/Chat'
-import Login from './components/Login'
-import firebase from 'firebase'
+import Login from "./components/Login";
+import Salas from "./components/Salas";
+import firebase from "firebase";
 
 export default {
   data() {
     return {
-      user: firebase.auth().currentUser
-    }
+      user: firebase.auth().currentUser,
+    };
   },
-  name: 'App',
+  name: "App",
   components: {
-    Chat, Login
-  }
-}
+    Login,
+    Salas,
+  },
+};
 </script>
 
 <style>
-  body {
-    background-color: #313131;
-  }
+body {
+  background-color: #313131;
+}
 </style>
