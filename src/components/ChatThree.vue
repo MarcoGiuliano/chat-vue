@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <header>
-      <h1>Chat with Firebase!</h1>
+      <h1>Sala 3</h1>
       <button @click="logout">Logout!</button>
     </header>
 

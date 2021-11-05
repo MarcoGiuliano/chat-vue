@@ -1,7 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 import firebase from "firebase";
-import VueRouter from "vue-router";
+import router from "./router";
 
 Vue.config.productionTip = false;
 
@@ -17,19 +17,6 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-
-const routes = [
-  {
-    path: "/chat",
-    name: "chat",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "./components/Chat.vue"),
-  },
-];
-
-const router = new VueRouter({
-  routes,
-});
 
 firebase.auth().onAuthStateChanged(() =>
   new Vue({

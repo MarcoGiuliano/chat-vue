@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <header>
-      <h1>Chat with Firebase!</h1>
+      <h1>Sala 1</h1>
       <button @click="logout">Logout!</button>
     </header>
 
@@ -37,7 +37,7 @@ import firebase from "firebase";
 export default {
   mounted() {
     this.db
-      .collection("messages")
+      .collection("salaOne")
       .orderBy("createdAt")
       .onSnapshot((querySnap) => {
         this.messages = querySnap.docs.map((doc) => doc.data());
@@ -67,7 +67,7 @@ export default {
         createdAt: Date.now(),
       };
 
-      await this.db.collection("messages").add(messageInfo);
+      await this.db.collection("salaOne").add(messageInfo);
 
       this.message = "";
       this.$refs["scrollable"].scrollIntoView({ behavior: "smooth" });
